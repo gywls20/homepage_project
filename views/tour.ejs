@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>충청 남도 어디갈까?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/stylesheets/assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<div><a href="http://localhost:3000/" class="logo"><strong>충청 남도 어디갈까?</strong></a></div>
+                                    
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+								</header>
+							<!-- Banner -->
+							<section>
+                                <div class="table-wrapper"><h2>Find a place</h2>
+                                    <table>
+                                        <tr>
+                                            <thead>
+                                                <tr>
+                                                    <th>번호</th>
+                                                    <th>지역</th>
+                                                    <th>장소이름</th>
+                                                    <th>카테고리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+												<% rows.forEach((row, index)=>{ %>
+                                                <tr>
+                                                    <td><%=row.tour_id%></td>
+                                                    <td><%=row.지역%></td>
+                                                    <td><%=row.이름%></td>
+                                                    <td><%=row.카테고리%></td>
+													<td><input type="button" onclick="javascript:location.href='/tour/details?tour_id=<%=row.tour_id%>'" value="details"></td>
+                                                </tr>
+												<% }) %>
+                                            </tbody>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="center">
+									<ul class="pagination">
+										<%if(count>=2){%>
+											<li><a href="http://localhost:3000/tour?count=<%=count-1%>" class="button">이전</a></li>
+										
+										<% }else{ %>
+											<li><span class="button disabled">이전</span></li>
+										<%} %>
+										<%for(i=1 ; i<=18; i++){%>
+										<li><a href="http://localhost:3000/tour?count=<%=i%>" class="page"><%=i%></a></li>
+										<%}%>
+										<!-- <li><a href="http://localhost:3000/room?count=2" class="page active">2</a></li>
+										<li><a href="http://localhost:3000/room?count=3" class="page">3</a></li>
+										<li><a href="http://localhost:3000/room?count=4" class="page">4</a></li>
+										<li><a href="http://localhost:3000/room?count=5" class="page">5</a></li>
+										<li><a href="http://localhost:3000/room?count=6" class="page">6</a></li>
+										<li><a href="http://localhost:3000/room?count=7" class="page">7</a></li>
+										<li><a href="http://localhost:3000/room?count=8" class="page">8</a></li>
+										<li><a href="http://localhost:3000/room?count=9" class="page">9</a></li>
+										<li><a href="http://localhost:3000/room?count=10" class="page">10</a></li>
+										<li><a href="http://localhost:3000/room?count=11" class="page">11</a></li>
+										<li><a href="http://localhost:3000/room?count=12" class="page">12</a></li>
+										<li><a href="http://localhost:3000/room?count=13" class="page">13</a></li> -->
+										<%if(count<=17){%>
+											<li><a href="http://localhost:3000/tour?count=<%=count+1%>" class="button">다음</a></li>
+										<% }else{ %>
+											<li><span class="button disabled">다음</span></li>
+										<%} %>
+									</ul>
+								</div>
+                            </section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!--logo-->
+							<header id="header">
+								<h2><a href="http://localhost:3000/" class="logo">Chungnam <br> Where you want.</a></h2>
+							</header>
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="http://localhost:3000/">들어가기전..</a></li>
+										<li><a href="chungnam">충청남도 소개</a></li>
+										<li>
+											<span class="opener">추천음식점</span>
+											<ul>
+												<li><a href="food">충남 추천 맛집</a></li>
+												<li><a href="safe">모범음식점</a></li>
+											</ul>
+										</li>
+										<li><a href="room">숙박업소</a></li>
+										<li><a href="tour">관광명소</a></li>
+										<li>
+											<span class="opener">게시판</span>
+											<ul>
+												<li><a href="review">게시글 보기</a></li>
+												<li><a href="write">게시글 쓰기</a></li>
+											</ul>
+										</li>
+										<li><a href="info">관련 사이트</a></li>
+									</ul>
+								</nav>
+
+
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; 2023.김효진 All rights reserved. | Tel: 010-9998-0172 e-mail: koj858@naver.com | Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/stylesheets/assets/js/jquery.min.js"></script>
+			<script src="/stylesheets/assets/js/browser.min.js"></script>
+			<script src="/stylesheets/assets/js/breakpoints.min.js"></script>
+			<script src="/stylesheets/assets/js/util.js"></script>
+			<script src="/stylesheets/assets/js/main.js"></script>
+
+	</body>
+</html>
